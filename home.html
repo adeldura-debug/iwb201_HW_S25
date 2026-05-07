@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم سمك بوري اللاذقية - الرئيسية</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🐟</span>
+                <span class="logo-text">مطعم سمك بوري</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="active">🏠 الرئيسية</a></li>
+                <li><a href="AboutUs.html">📖 من نحن</a></li>
+                <li><a href="Meals.html">🍽️ الوجبات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">مطعم سمك بوري اللاذقية</h1>
+            <p class="hero-subtitle">أشهى المأكولات البحرية الطازجة بأسلوب عصري</p>
+            <div class="hero-buttons">
+                <a href="Meals.html" class="btn-primary">📋 اطلب الآن</a>
+                <a href="AboutUs.html" class="btn-secondary">📖 اكتشف المزيد</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>👥 فريق العمل</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <div class="team-icon">👨‍🍳</div>
+                <h3>خليل هيثم حداد</h3>
+                <p class="team-id">الرقم الجامعي: 284407</p>
+                <p class="team-name-en">Khalil Haitham Haddad</p>
+                <span class="team-class">الصف: C3</span>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👩‍🍳</div>
+                <h3>مايا خلدون الجغصي</h3>
+                <p class="team-id">الرقم الجامعي: 328671</p>
+                <p class="team-name-en">Maya Khaldoun Al-Jaghsi</p>
+                <span class="team-class">الصف: C4</span>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👨‍🍳</div>
+                <h3>أحمد عمر زيتون</h3>
+                <p class="team-id">الرقم الجامعي: 247089</p>
+                <p class="team-name-en">Ahmed Omar Zeitoun</p>
+                <span class="team-class">الصف: C4</span>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👩‍🍳</div>
+                <h3>رهف فايز عبد ربه</h3>
+                <p class="team-id">الرقم الجامعي: 252723</p>
+                <p class="team-name-en">Rahaf Faiz Abdul Rabih</p>
+                <span class="team-class">الصف: C3</span>
+            </div>
+            <div class="team-card">
+                <div class="team-icon">👩‍🍳</div>
+                <h3>جود محمد مهندس</h3>
+                <p class="team-id">الرقم الجامعي: 311268</p>
+                <p class="team-name-en">Jud Muhammad Muhandis</p>
+                <span class="team-class">الصف: C7</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features">
+        <h2>🌟 لماذا تختارنا؟</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🐟</div>
+                <h3>أسماك طازجة يومياً</h3>
+                <p>نقدم لكم أجود أنواع الأسماك الطازجة من البحر مباشرة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>طهاة محترفون</h3>
+                <p>فريق من أمهر الطهاة ذوي الخبرة الطويلة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>جودة عالية</h3>
+                <p>نحن ملتزمون بأعلى معايير الجودة والنظافة</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>توصيل سريع</h3>
+                <p>خدمة توصيل سريعة إلى جميع أنحاء المدينة</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>مطعم سمك بوري اللاذقية</h4>
+                <p>أشهى المأكولات البحرية بأسعار منافسة</p>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <p>📞 011-8434565</p>
+                <p>✉️ info@boreefish.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 مطعم سمك بوري اللاذقية - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <div id="publishInfo" class="publish-banner">
+        🌐 رابط النشر: <span id="publishLinkText">https://yourproject.github.io/restaurant</span>
+        <button onclick="copyPublishLink()" class="copy-btn">📋 نسخ الرابط</button>
+    </div>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+</body>
+</html>

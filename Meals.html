@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم سمك بوري - قائمة الوجبات</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🐟</span>
+                <span class="logo-text">مطعم سمك بوري</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="active">🏠 الرئيسية</a></li>
+                <li><a href="AboutUs.html">📖 من نحن</a></li>
+                <li><a href="Meals.html">🍽️ الوجبات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>🍽️ قائمة الوجبات</h1>
+        <p>اختر وجبتك المفضلة واستمتع بأشهى المأكولات البحرية</p>
+    </section>
+
+    <!-- جدول الوجبات -->
+    <section class="menu-section">
+        <div class="menu-container">
+            <table id="foodTable" class="menu-table">
+                <thead>
+                    <tr>
+                        <th>الرمز</th>
+                        <th>الوجبة</th>
+                        <th>السعر (ل.س)</th>
+                        <th>إظهار التفاصيل</th>
+                        <th>اختيار</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row-SF001">
+                        <td><span class="meal-code">SF-001</span></td>
+                        <td><div class="meal-info"><span class="meal-name">وجبة سمك بوري مشوي لشخصين</span></div></td>
+                        <td><span class="meal-price">110,000</span> ل.س</td>
+                        <td><button class="details-btn" data-id="SF001">📋 إظهار التفاصيل</button></td>
+                        <td><input type="checkbox" class="select-meal" data-price="110000" data-name="وجبة سمك بوري مشوي لشخصين"></td>
+                    </tr>
+                    <tr id="row-SF002">
+                        <td><span class="meal-code">SF-002</span></td>
+                        <td><div class="meal-info"><span class="meal-name">طاجن سمك بالخضار</span></div></td>
+                        <td><span class="meal-price">85,000</span> ل.س</td>
+                        <td><button class="details-btn" data-id="SF002">📋 إظهار التفاصيل</button></td>
+                        <td><input type="checkbox" class="select-meal" data-price="85000" data-name="طاجن سمك بالخضار"></td>
+                    </tr>
+                    <tr id="row-SF003">
+                        <td><span class="meal-code">SF-003</span></td>
+                        <td><div class="meal-info"><span class="meal-name">سمك مقلي مع بطاطا</span></div></td>
+                        <td><span class="meal-price">65,000</span> ل.س</td>
+                        <td><button class="details-btn" data-id="SF003">📋 إظهار التفاصيل</button></td>
+                        <td><input type="checkbox" class="select-meal" data-price="65000" data-name="سمك مقلي مع بطاطا"></td>
+                    </tr>
+                    <tr id="row-SF004">
+                        <td><span class="meal-code">SF-004</span></td>
+                        <td><div class="meal-info"><span class="meal-name">تشكيلة مشاوي بحر</span></div></td>
+                        <td><span class="meal-price">145,000</span> ل.س</td>
+                        <td><button class="details-btn" data-id="SF004">📋 إظهار التفاصيل</button></td>
+                        <td><input type="checkbox" class="select-meal" data-price="145000" data-name="تشكيلة مشاوي بحر"></td>
+                    </tr>
+                    <tr id="row-SF005">
+                        <td><span class="meal-code">SF-005</span></td>
+                        <td><div class="meal-info"><span class="meal-name">مقبلات بحرية (كلماري، جمبري)</span></div></td>
+                        <td><span class="meal-price">50,000</span> ل.س</td>
+                        <td><button class="details-btn" data-id="SF005">📋 إظهار التفاصيل</button></td>
+                        <td><input type="checkbox" class="select-meal" data-price="50000" data-name="مقبلات بحرية"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="order-summary">
+                <div class="summary-header">
+                    <h3>🛒 سلة الطلبات</h3>
+                    <span id="selectedCount">0</span> وجبة مختارة
+                </div>
+                <div id="selectedMealsList" class="selected-list"></div>
+                <div class="summary-total">
+                    <span>المجموع:</span>
+                    <span id="totalPrice">0</span> ل.س
+                </div>
+                <button id="continueBtn" class="btn-primary checkout-btn">📝 متابعة للطلب</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج بيانات العميل -->
+    <section id="customerForm" class="form-section">
+        <h2>📋 نموذج بيانات الطلب</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label>👤 الاسم الكامل (إنجليزي فقط):</label>
+                <input type="text" id="fullName" placeholder="Ahmed Mohammed">
+                <small class="hint">مثال: Ahmed Mohammed (فراغ واحد بين الاسم والكنية)</small>
+            </div>
+            
+            <div class="form-group">
+                <label>🏦 رقم الحساب المصرفي (6 خانات): <span class="required">*</span></label>
+                <input type="text" id="bankAccount" placeholder="055555" maxlength="6">
+                <small class="hint">رقم مؤلف من 6 خانات، يمكن أن يبدأ بصفر</small>
+            </div>
+            
+            <div class="form-group">
+                <label>📅 تاريخ الطلب (dd-mm-yyyy):</label>
+                <input type="text" id="orderDate" placeholder="20-05-2026">
+                <small class="hint">مثال: 25-12-2026</small>
+            </div>
+            
+            <div class="form-group">
+                <label>📱 رقم الموبايل:</label>
+                <input type="text" id="mobile" placeholder="0933333333">
+                <small class="hint">يجب أن يبدأ بـ 093 أو 094 (Syriatel) أو 095 (MTN)</small>
+            </div>
+            
+            <div class="button-group">
+                <button type="button" id="submitBtn" class="btn-success">✅ إرسال الطلب</button>
+                <button type="button" id="resetFormBtn" class="btn-secondary">🗑️ إعادة تعيين</button>
+                <button type="button" id="cancelFormBtn" class="btn-cancel">✖️ إلغاء</button>
+            </div>
+        </form>
+        <div id="errors" class="error-message"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>مطعم سمك بوري اللاذقية</h4>
+                <p>أشهى المأكولات البحرية بأسعار منافسة</p>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <p>📞 011-8434565</p>
+                <p>✉️ info@boreefish.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 مطعم سمك بوري اللاذقية - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">↑</button>
+
+</body>
+</html>
